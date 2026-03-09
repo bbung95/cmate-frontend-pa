@@ -21,3 +21,7 @@ npm install
 npm run dev
 # or pnpm dev
 ```
+
+## Figma MCP
+
+figma custom mcp를 사용하여 디자인 토큰과 디자인컴포넌트를 구현했습니다.
