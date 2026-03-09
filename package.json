@@ -6,11 +6,9 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "pnpm lint:fix && pnpm lint:format",
-		"lint:fix": "eslint --fix \"./src/**/*.{ts,tsx,js,jsx}\"",
-		"lint:format": "prettier --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\"",
 		"storybook": "storybook dev -p 6006",
-		"build-storybook": "storybook build"
+		"build-storybook": "storybook build",
+		"prepare": "husky"
 	},
 	"dependencies": {
 		"next": "16.1.6",
@@ -19,23 +17,30 @@
 	},
 	"devDependencies": {
 		"@tailwindcss/postcss": "^4",
+		"@trivago/prettier-plugin-sort-imports": "^5.2.2",
 		"@types/node": "^20",
 		"@types/react": "^19",
 		"@types/react-dom": "^19",
 		"eslint": "^9",
-		"@trivago/prettier-plugin-sort-imports": "^5.2.2",
-		"prettier-plugin-tailwindcss": "^0.6.11",
 		"eslint-config-next": "16.1.6",
 		"eslint-config-prettier": "^10.1.8",
-		"eslint-plugin-react": "^7.37.4",
 		"eslint-plugin-jsx-a11y": "^6.10.2",
 		"eslint-plugin-prettier": "^5.5.5",
+		"eslint-plugin-react": "^7.37.4",
 		"eslint-plugin-storybook": "^10.2.16",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.3.2",
 		"prettier": "^3.8.1",
+		"prettier-plugin-tailwindcss": "^0.6.11",
+		"storybook": "^10.2.16",
 		"tailwindcss": "^4",
 		"typescript": "^5",
-		"storybook": "^10.2.16",
-		"husky": "^9.1.7",
 		"typescript-eslint": "^8.18.2"
+	},
+	"lint-staged": {
+		"**/*.{js,jsx,ts,tsx,css,md,json}": [
+			"prettier --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\"",
+			"eslint --fix \"./src/**/*.{ts,tsx,js,jsx}\""
+		]
 	}
 }
