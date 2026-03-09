@@ -32,7 +32,6 @@ export const Default: Story = {
 		children: 'Default Button',
 		variant: 'primary',
 		size: 'm',
-		fullWidth: false,
 		disabled: false,
 	},
 };
@@ -49,7 +48,7 @@ export const Secondary: Story = {
 	args: {
 		...Default.args,
 		children: 'Secondary Button',
-		variant: 'secondary',
+		variant: 'secondary-line',
 	},
 };
 
@@ -65,7 +64,7 @@ export const Link: Story = {
 	args: {
 		...Default.args,
 		children: 'Link Button',
-		variant: 'link',
+		variant: 'text-link',
 	},
 };
 
@@ -104,7 +103,7 @@ export const Disabled: Story = {
 export const FullWidth: Story = {
 	decorators: [
 		(Story) => (
-			<div style={{ width: '400px' }}>
+			<div style={{ width: '40rem' }}>
 				<Story />
 			</div>
 		),
@@ -112,7 +111,7 @@ export const FullWidth: Story = {
 	args: {
 		...Default.args,
 		children: 'Full Width Button',
-		fullWidth: true,
+		className: 'w-full',
 	},
 };
 
