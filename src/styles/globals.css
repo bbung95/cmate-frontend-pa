@@ -5,6 +5,7 @@
 :root {
 	--background: #ffffff;
 	--foreground: #171717;
+	--spacing: 1px;
 }
 
 @theme inline {
@@ -14,15 +15,21 @@
 	--font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
-	}
-}
+@layer base {
+	html {
+		font-size: 10px;
 
-body {
-	background: var(--background);
-	color: var(--foreground);
-	font-family: 'Noto Sans KR', sans-serif;
+		@media screen and (max-width: 360px) {
+			font-size: 9px;
+		}
+	}
+
+	body {
+		background: var(--background);
+		color: var(--foreground);
+		font-family: 'Noto Sans KR', sans-serif;
+		/* body 이하는 rem 단위의 영향을 받도록 설정 */
+		font-size: 1.6rem;
+		line-height: 1.5;
+	}
 }

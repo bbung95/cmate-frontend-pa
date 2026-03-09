@@ -27,22 +27,19 @@ const ColorsLayout = () => {
 	];
 
 	return (
-		<div className="flex min-h-screen flex-col gap-12 bg-[var(--color-gray-6)] p-8">
-			<h1 className="text-2xl font-bold text-[var(--color-gray-black)]">Color Tokens</h1>
+		<div className="bg-gray-6 flex min-h-screen flex-col gap-12 p-8">
+			<h1 className="text-gray-black text-2xl font-bold">Color Tokens</h1>
 			{groups.map((group) => (
 				<div key={group.title} className="flex flex-col gap-4">
-					<h2 className="text-lg font-bold text-[var(--color-gray-1)]">{group.title}</h2>
+					<h2 className="text-gray-1 text-lg font-bold">{group.title}</h2>
 					<div className="grid grid-cols-2 gap-4 md:grid-cols-4">
 						{group.colors.map((color) => (
-							<div
-								key={color.name}
-								className="overflow-hidden rounded-xl border border-[var(--color-gray-4)] bg-white shadow-sm"
-							>
-								<div style={{ backgroundColor: color.var }} className="h-24 w-full" />
-								<div className="flex flex-col gap-1 p-4">
-									<span className="text-sm font-bold text-[var(--color-gray-black)]">{color.name}</span>
-									<span className="text-xs text-[var(--color-gray-2)]">{color.hex}</span>
-									<code className="mt-1 rounded bg-[var(--color-gray-5)] p-1 text-[10px]">{color.var}</code>
+							<div key={color.name} className="border-gray-4 overflow-hidden rounded-xl border bg-white shadow-sm">
+								<div style={{ backgroundColor: color.var }} className="h-80 w-full" />
+								<div className="flex flex-col gap-1 p-12">
+									<span className="text-gray-black text-b1 font-bold">{color.name}</span>
+									<span className="text-gray-2 text-b1">{color.hex}</span>
+									<code className="bg-gray-5 mt-1 rounded p-1 text-[1rem]">{color.var}</code>
 								</div>
 							</div>
 						))}

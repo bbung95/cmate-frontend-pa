@@ -46,7 +46,7 @@ export const Disabled: Story = {
 export const FullWidth: Story = {
 	decorators: [
 		(Story) => (
-			<div style={{ width: '600px' }}>
+			<div style={{ width: '60rem' }}>
 				<Story />
 			</div>
 		),

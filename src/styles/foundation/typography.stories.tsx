@@ -21,13 +21,13 @@ const TypographyLayout = () => {
 			<div className="flex flex-col gap-10">
 				{textTokens.map((token) => (
 					<div key={token.name} className="flex flex-col gap-2 border-b border-gray-100 pb-6">
-						<div className="flex items-center gap-4 text-sm text-[var(--color-gray-2)]">
-							<span className="font-bold text-[var(--color-main-coral-pink)]">{token.name}</span>
+						<div className="text-gray-2 flex items-center gap-4 text-sm">
+							<span className="text-main-coral-pink font-bold">{token.name}</span>
 							<span>
 								Utility: <code>.{token.token.toLowerCase()}</code>
 							</span>
 						</div>
-						<p className={`${token.token} text-[var(--color-gray-black)]`}>
+						<p className={`${token.token} text-gray-black`}>
 							다람쥐 헌 쳇바퀴에 타고파. The quick brown fox jumps over the lazy dog.
 						</p>
 					</div>

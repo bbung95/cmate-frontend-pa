@@ -1,22 +1,34 @@
+'use client';
+
 import { ReactNode } from 'react';
+
+import Icon from '../Icon';
 
 interface TopNavigationProps {
 	title?: string;
-	leftElement?: ReactNode;
-	rightElement?: ReactNode;
+	leftRender?: ReactNode;
+	rightRender?: ReactNode;
 	className?: string;
 }
 
-export default function TopNavigation({ title, leftElement, rightElement, className = '' }: TopNavigationProps) {
+const TopNavigation = ({ title, leftRender, rightRender, className = '' }: TopNavigationProps) => {
 	return (
-		<header
-			className={`flex h-[48px] items-center justify-between border-b border-[var(--color-gray-6)] bg-[var(--color-white)] px-4 ${className}`}
-		>
-			<div className="flex min-w-[40px] items-center">{leftElement}</div>
-
-			{title && <h1 className="truncate text-[18px] font-bold text-[var(--color-gray-black)]">{title}</h1>}
-
-			<div className="flex min-w-[40px] items-center justify-end">{rightElement}</div>
+		<header className={`border-gray-6 flex h-48 items-center justify-between bg-white px-16 ${className}`}>
+			<div className="flex min-w-40 items-center">{leftRender}</div>
+			{title && <h1 className="text-gray-black text-b1-bold truncate">{title}</h1>}
+			<div className="flex min-w-40 items-center justify-end">{rightRender}</div>
 		</header>
 	);
-}
+};
+
+export const BackButton = () => {
+	return (
+		<button className="flex items-center" onClick={() => history.back()}>
+			<Icon name="arrow" className="size-24" />
+		</button>
+	);
+};
+
+TopNavigation.BackButton = BackButton;
+
+export default TopNavigation;

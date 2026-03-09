@@ -47,7 +47,7 @@ export const Default: Story = {
 
 export const CustomStyle: Story = {
 	render: (args) => (
-		<TabBar {...args} className="bg-[var(--color-gray-6)]!">
+		<TabBar {...args} className="bg-gray-6!">
 			<TabBarItem icon={HomeIcon} label="일정" active />
 			<TabBarItem icon={SearchIcon} label="장소" />
 			<TabBarItem icon={UserIcon} label="프로필" />

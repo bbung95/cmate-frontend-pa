@@ -82,6 +82,6 @@ export const OnlyTitle: Story = {
 export const WithoutTitle: Story = {
 	args: {
 		leftElement: BackIcon,
-		rightElement: <span className="text-[14px] text-[var(--color-gray-1)]">저장</span>,
+		rightElement: <span className="text-gray-1 text-[1.4rem]">저장</span>,
 	},
 };
