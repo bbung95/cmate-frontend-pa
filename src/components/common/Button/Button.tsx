@@ -7,7 +7,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantPr
 }
 
 export const buttonVariants = cva(
-	['inline-flex items-center justify-center transition-all disabled:cursor-not-allowed whitespace-nowrap rounded-md'],
+	[
+		'inline-flex items-center gap-8 justify-center transition-all disabled:cursor-not-allowed whitespace-nowrap rounded-md',
+	],
 	{
 		variants: {
 			variant: {
@@ -21,8 +23,8 @@ export const buttonVariants = cva(
 			size: {
 				xl: 'h-64 px-28 text-h2',
 				l: 'h-56 px-24 text-h2',
-				m: 'h-48 px-20 text-b1',
-				s: 'h-32 px-16 text-b2',
+				m: 'h-48 px-20 text-b1-bold',
+				s: 'h-32 px-16 text-b2-bold',
 			},
 		},
 		defaultVariants: {
@@ -43,9 +45,9 @@ export default function Button({
 }: ButtonProps) {
 	return (
 		<button className={`${buttonVariants({ size, variant })} ${className}`} {...props}>
-			{leftIcon && <span className="mr-2 flex items-center">{leftIcon}</span>}
-			{children}
-			{rightIcon && <span className="ml-2 flex items-center">{rightIcon}</span>}
+			{leftIcon && <span className="flex items-center">{leftIcon}</span>}
+			<p>{children}</p>
+			{rightIcon && <span className="flex items-center">{rightIcon}</span>}
 		</button>
 	);
 }
