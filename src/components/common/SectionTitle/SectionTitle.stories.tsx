@@ -20,24 +20,16 @@ export const Default: Story = {
 	},
 };
 
-export const WithDescription: Story = {
+export const WithRightRender: Story = {
 	args: {
 		...Default.args,
-		description: 'This is a description for the section.',
-	},
-};
-
-export const WithRightElement: Story = {
-	args: {
-		...Default.args,
-		rightElement: <button className="text-main-coral-pink text-[1.4rem]">더보기</button>,
+		rightRender: <button className="text-main-coral-pink text-[1.4rem]">더보기</button>,
 	},
 };
 
 export const Full: Story = {
 	args: {
 		title: '전체 설정',
-		description: '앱의 다양한 설정을 관리하세요.',
-		rightElement: <button className="text-gray-3 text-[1.4rem] underline">초기화</button>,
+		rightRender: <button className="text-gray-3 text-[1.4rem] underline">초기화</button>,
 	},
 };
