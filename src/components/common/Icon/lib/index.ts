@@ -1,2 +1,10 @@
 export { default as arrow } from './icon_arrow.svg';
 export { default as volume } from './icon_volume.svg';
+export { default as settings } from './icon_settings.svg';
+export { default as bell } from './icon_bell.svg';
+export { default as edit } from './icon_edit.svg';
+export { default as eye } from './icon_eye.svg';
+export { default as heart } from './icon_heart.svg';
+export { default as rss } from './icon_rss.svg';
+export { default as star } from './icon_star.svg';
+export { default as users } from './icon_users.svg';

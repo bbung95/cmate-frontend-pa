@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 
+import MenuBox from './components/MenuBox';
 import ProfileCard from './components/ProfileCard';
 
 export const metadata: Metadata = {
@@ -12,6 +13,8 @@ export default function My() {
 		<div className="flex flex-col gap-16">
 			{/* 프로필 카드 */}
 			<ProfileCard />
+			{/* 메뉴 박스 */}
+			<MenuBox />
 		</div>
 	);
 }
