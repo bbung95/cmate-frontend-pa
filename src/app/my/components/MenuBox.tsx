@@ -4,7 +4,7 @@ import Icon, { IconTypes } from '@/components/common/Icon';
 
 const MENU_LIST: { name: string; icon: IconTypes; path: string }[] = [
 	{ name: '나의 프로필 보기', icon: 'eye', path: '/my/profile' },
-	{ name: '프로필 수정하기', icon: 'edit', path: '#' },
+	{ name: '프로필 수정하기', icon: 'edit', path: '/my/edit' },
 	{ name: '호감 리스트', icon: 'heart', path: '#' },
 	{ name: '매니저 추천', icon: 'star', path: '#' },
 	{ name: '파티공고 보기', icon: 'rss', path: '#' },

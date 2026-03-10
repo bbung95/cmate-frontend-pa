@@ -35,6 +35,10 @@
 		line-height: 1.5;
 	}
 
+	button {
+		cursor: pointer;
+	}
+
 	.scrollbar-hide {
 		-ms-overflow-style: none; /* IE and Edge */
 		scrollbar-width: none; /* Firefox */
