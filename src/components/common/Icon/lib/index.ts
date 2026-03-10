@@ -12,3 +12,4 @@ export { default as user } from './icon_user.svg';
 export { default as home } from './icon_home.svg';
 export { default as message } from './icon_message.svg';
 export { default as search } from './icon_search.svg';
+export { default as xCircle } from './icon_x_circle.svg';

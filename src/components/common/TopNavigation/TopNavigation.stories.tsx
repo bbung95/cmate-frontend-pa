@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 
 import TopNavigation from './TopNavigation';
 
@@ -61,15 +61,15 @@ const SettingsIcon = (
 export const Default: Story = {
 	args: {
 		title: '페이지 제목',
-		leftElement: BackIcon,
-		rightElement: SettingsIcon,
+		leftRender: <TopNavigation.BackButton />,
+		rightRender: SettingsIcon,
 	},
 };
 
 export const HeaderWithClose: Story = {
 	args: {
 		title: '공지사항',
-		rightElement: CloseIcon,
+		rightRender: CloseIcon,
 	},
 };
 
@@ -81,7 +81,7 @@ export const OnlyTitle: Story = {
 
 export const WithoutTitle: Story = {
 	args: {
-		leftElement: BackIcon,
-		rightElement: <span className="text-gray-1 text-[1.4rem]">저장</span>,
+		leftRender: BackIcon,
+		rightRender: <span className="text-gray-1 text-[1.4rem]">저장</span>,
 	},
 };

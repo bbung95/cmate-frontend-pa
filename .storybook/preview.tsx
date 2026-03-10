@@ -1,4 +1,4 @@
-import type { Preview } from '@storybook/nextjs-vite';
+import type { Preview } from '@storybook/nextjs';
 
 import '../src/styles/globals.css';
 
@@ -11,6 +11,7 @@ const preview: Preview = {
 			},
 		},
 	},
+
 	decorators: [
 		(Story) => {
 			return (
