@@ -1,10 +1,15 @@
+import Link from 'next/link';
 import { ReactNode } from 'react';
 
+import { cn } from '@/lib/utils';
+
+import Icon, { IconTypes } from '../Icon';
+
 interface TabBarItemProps {
-	icon: ReactNode;
+	icon: IconTypes;
 	label: string;
+	path: string;
 	active?: boolean;
-	onClick?: () => void;
 }
 
 interface TabBarProps {
@@ -12,24 +17,25 @@ interface TabBarProps {
 	className?: string;
 }
 
-export function TabBarItem({ icon, label, active = false, onClick }: TabBarItemProps) {
-	const colorStyles = active ? 'text-[var(--color-main-coral-pink)]' : 'text-[var(--color-gray-3)]';
-
+export function TabBarItem({ icon, label, active = false, path }: TabBarItemProps) {
 	return (
-		<button
-			onClick={onClick}
-			className={`flex h-full flex-1 flex-col items-center justify-center gap-1 ${colorStyles} transition-colors`}
+		<Link
+			href={path}
+			className={cn(
+				`text-gray-3 flex h-full flex-1 flex-col items-center justify-center gap-4 transition-colors`,
+				active ? 'text-main-coral-pink' : 'text-gray-3'
+			)}
 		>
-			<div className="flex h-6 w-6 items-center justify-center">{icon}</div>
-			<span className="text-[10px] font-medium">{label}</span>
-		</button>
+			<Icon name={icon} className="size-24" />
+			<span className="text-b3">{label}</span>
+		</Link>
 	);
 }
 
 export default function TabBar({ children, className = '' }: TabBarProps) {
 	return (
 		<nav
-			className={`pb-safe fixed right-0 bottom-0 left-0 flex h-[83px] items-center border-t border-[var(--color-gray-6)] bg-[var(--color-white)] ${className}`}
+			className={`border-gray-6 bg--white sticky right-0 bottom-0 left-0 z-50 flex h-[83px] items-center border-t bg-white px-16 pt-7 pb-30 ${className}`}
 		>
 			{children}
 		</nav>

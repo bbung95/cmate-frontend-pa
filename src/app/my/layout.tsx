@@ -14,10 +14,11 @@ export default function MyLayout({
 			<TopNavigation leftRender={<TopNavigation.BackButton />} title="마이페이지" />
 			<div className="flex-1 p-16">{children}</div>
 			<TabBar>
-				<TabBarItem label="1" icon={<></>} />
-				<TabBarItem label="2" icon={<></>} />
-				<TabBarItem label="3" icon={<></>} />
-				<TabBarItem label="4" icon={<></>} />
+				<TabBarItem label="Home" icon="home" path="/" />
+				<TabBarItem label="탐색" icon="search" path="#" />
+				<TabBarItem label="매칭" icon="heart" path="#" />
+				<TabBarItem label="대화" icon="message" path="#" />
+				<TabBarItem label="마이페이지" icon="user" path="/my" active />
 			</TabBar>
 		</MobileLayout>
 	);

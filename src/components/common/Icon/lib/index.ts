@@ -8,3 +8,7 @@ export { default as heart } from './icon_heart.svg';
 export { default as rss } from './icon_rss.svg';
 export { default as star } from './icon_star.svg';
 export { default as users } from './icon_users.svg';
+export { default as user } from './icon_user.svg';
+export { default as home } from './icon_home.svg';
+export { default as message } from './icon_message.svg';
+export { default as search } from './icon_search.svg';
