@@ -29,10 +29,10 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(({ error, classN
 				placeholder=" "
 				className={cn([
 					'peer text-gray-black text-b1 resize-none bg-white',
-					'border-gray-4 min-h-[150px] w-full rounded-md border pt-12 pr-52 pl-20 transition-all outline-none disabled:cursor-not-allowed',
-					'placeholder-shown:pr-20 read-only:pr-20 disabled:pr-20',
+					'border-gray-4 min-h-[150px] w-full rounded-md border py-12 pr-52 pl-20 transition-all outline-none',
+					'placeholder-shown:pr-20 read-only:pr-20',
 					'hover:border-gray-3 hover:placeholder:text-gray-2 focus:border-gray-3 placeholder:text-gray-3',
-					'disabled:bg-gray-5 disabled:border-gray-4 disabled:text-gray-3',
+					'disabled:bg-gray-5 disabled:border-gray-4 disabled:text-gray-3 disabled:cursor-not-allowed disabled:pr-20',
 					error && 'border-sub-red',
 					className,
 				])}

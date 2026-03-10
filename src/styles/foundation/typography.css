@@ -53,3 +53,10 @@
 	letter-spacing: var(--letter-spacing-b3);
 	font-weight: var(--font-weight-regular);
 }
+
+@utility text-16r {
+	font-size: var(--font-size-b1);
+	line-height: var(--line-height-b2);
+	letter-spacing: var(--letter-spacing-b1);
+	font-weight: var(--font-weight-regular);
+}

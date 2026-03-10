@@ -32,17 +32,18 @@ export const Default: Story = {
 	},
 };
 
-export const WithValue: Story = {
-	args: {
-		...Default.args,
-		value: '이미 입력된 내용입니다.\n줄바꿈도 지원합니다.',
-	},
-};
-
 export const WithError: Story = {
 	args: {
 		...Default.args,
 		error: true,
+	},
+};
+
+export const ReadOnly: Story = {
+	args: {
+		...Default.args,
+		readOnly: true,
+		value: '수정 불가',
 	},
 };
 
