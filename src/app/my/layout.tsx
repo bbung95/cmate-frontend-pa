@@ -1,8 +1,12 @@
-'use client';
+import { Metadata } from 'next';
 
 import TabBar, { TabBarItem } from '@/components/common/TabBar/TabBar';
-import TopNavigation from '@/components/common/TopNavigation/TopNavigation';
 import MobileLayout from '@/components/layout/MobileLayout';
+
+export const metadata: Metadata = {
+	title: '크리스천메이트 - 마이페이지',
+	description: '크리스천메이트 과제전형',
+};
 
 export default function MyLayout({
 	children,
@@ -11,8 +15,7 @@ export default function MyLayout({
 }>) {
 	return (
 		<MobileLayout>
-			<TopNavigation leftRender={<TopNavigation.BackButton />} title="마이페이지" />
-			<div className="flex-1 p-16">{children}</div>
+			{children}
 			<TabBar>
 				<TabBarItem label="Home" icon="home" path="/" />
 				<TabBarItem label="탐색" icon="search" path="#" />

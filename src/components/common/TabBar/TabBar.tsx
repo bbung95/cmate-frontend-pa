@@ -35,7 +35,7 @@ export function TabBarItem({ icon, label, active = false, path }: TabBarItemProp
 export default function TabBar({ children, className = '' }: TabBarProps) {
 	return (
 		<nav
-			className={`border-gray-6 bg--white sticky right-0 bottom-0 left-0 z-50 flex h-[83px] items-center border-t bg-white px-16 pt-7 pb-30 ${className}`}
+			className={`border-gray-6 bg--white fixed right-0 bottom-0 left-0 z-50 flex h-[var(--tab-bar-height)] items-center border-t bg-white px-16 pt-7 pb-30 ${className}`}
 		>
 			{children}
 		</nav>

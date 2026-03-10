@@ -3,7 +3,7 @@ interface MobileLayoutProps {
 }
 
 const MobileLayout = ({ children }: MobileLayoutProps) => {
-	return <div className="grid-col-1 grid h-full">{children}</div>;
+	return <div className="bg-gray-6 mx-auto min-h-screen w-full max-w-480 pb-[var(--tab-bar-height)]">{children}</div>;
 };
 
 export default MobileLayout;

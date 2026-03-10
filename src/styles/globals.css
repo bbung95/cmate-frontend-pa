@@ -6,6 +6,8 @@
 	--background: #ffffff;
 	--foreground: #171717;
 	--spacing: 1px;
+
+	--tab-bar-height: 8.3rem;
 }
 
 @theme inline {
@@ -31,5 +33,13 @@
 		/* body 이하는 rem 단위의 영향을 받도록 설정 */
 		font-size: 1.6rem;
 		line-height: 1.5;
+	}
+
+	.scrollbar-hide {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+		&::-webkit-scrollbar {
+			display: none; /* Chrome, Safari and Opera */
+		}
 	}
 }
