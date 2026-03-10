@@ -3,7 +3,7 @@ import { InputHTMLAttributes } from 'react';
 import { cn } from '@/lib/utils';
 
 interface RadioButtonProps extends InputHTMLAttributes<HTMLInputElement> {
-	label?: string;
+	label: string;
 }
 
 export default function RadioButton({ label, className = '', ...props }: RadioButtonProps) {

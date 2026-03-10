@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import Button from '@/components/common/Button/Button';
 import Icon from '@/components/common/Icon';
 import SectionTitle from '@/components/common/SectionTitle/SectionTitle';
@@ -10,9 +12,9 @@ const ProfileEditBox = () => {
 				<div className="grid grid-cols-[8rem_1fr_2.4rem] gap-20 py-16">
 					<label className="text-b1 text-gray-2">이름</label>
 					<p className="text-b1-bold text-gray-black">임승리</p>
-					<button>
+					<Link href={'/my/edit/name'}>
 						<Icon name="arrow" className="text-gray-3 size-24 rotate-180" />
-					</button>
+					</Link>
 				</div>
 				<div className="grid grid-cols-[8rem_1fr_2.4rem] gap-20 py-16">
 					<label className="text-b1 text-gray-2">성별</label>
@@ -25,16 +27,16 @@ const ProfileEditBox = () => {
 				<div className="grid grid-cols-[8rem_1fr_2.4rem] gap-20 py-16">
 					<label className="text-b1 text-gray-2">결혼경험</label>
 					<p className="text-b1-bold text-gray-black">초혼</p>
-					<button>
+					<Link href={'/my/edit/marriage'}>
 						<Icon name="arrow" className="text-gray-3 size-24 rotate-180" />
-					</button>
+					</Link>
 				</div>
 				<div className="grid grid-cols-[8rem_1fr_2.4rem] gap-20 py-16">
 					<label className="text-b1 text-gray-2">신장</label>
 					<p className="text-b1-bold text-gray-black">170cm</p>
-					<button>
+					<Link href={'/my/edit/height'}>
 						<Icon name="arrow" className="text-gray-3 size-24 rotate-180" />
-					</button>
+					</Link>
 				</div>
 				<div className="grid grid-cols-[8rem_1fr_2.4rem] gap-20 py-16">
 					<label className="text-b1 text-gray-2">나의 체형</label>

@@ -30,8 +30,10 @@ export default async function EditPage({ params }: { params: Promise<{ type: 'na
 								<br />
 								허위 기재시 민/형사상의 책임을 물으시게 됩니다.
 							</Field.ErrorMessage>
-							<div>
-								<RadioButton />
+							<div className="flex flex-col gap-8">
+								<RadioButton label="초혼" value={'초혼'} />
+								<RadioButton label="재혼" value={'재혼'} />
+								<RadioButton label="사실혼" value={'사실혼'} />
 							</div>
 						</Field>
 					)}
