@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
 
+import Field from '../Field/Field';
 import TextField from './TextField';
 
 const meta: Meta<typeof TextField> = {
@@ -82,4 +83,16 @@ export const FullWidth: Story = {
 		...Default.args,
 		fullWidth: true,
 	},
+};
+
+export const WithField: Story = {
+	render: () => (
+		<div style={{ width: '40rem' }}>
+			<Field>
+				<Field.Label>이메일</Field.Label>
+				<TextField placeholder="이메일을 입력해주세요." fullWidth />
+				<Field.HelpMessage>비밀번호 찾기 등에 사용됩니다.</Field.HelpMessage>
+			</Field>
+		</div>
+	),
 };
