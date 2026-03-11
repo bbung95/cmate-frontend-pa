@@ -1,17 +1,23 @@
 import Link from 'next/link';
 
+import { ResponseGetProfileType } from '@/apis/profile/type';
 import Button from '@/components/common/Button/Button';
 import Icon from '@/components/common/Icon';
 import SectionTitle from '@/components/common/SectionTitle/SectionTitle';
+import { MARRIAGE_HISTORY } from '@/enums/profile';
 
-const ProfileEditBox = () => {
+interface ProfileEditBoxProps {
+	data?: Omit<ResponseGetProfileType, 'profileImageUrl'>;
+}
+
+const ProfileEditBox = ({ data }: ProfileEditBoxProps) => {
 	return (
 		<div className="flex flex-col gap-16 bg-white p-16">
 			<SectionTitle title="기본 정보" />
 			<div className="divide-gray-4 divide-y">
 				<div className="grid grid-cols-[8rem_1fr_2.4rem] gap-20 py-16">
 					<label className="text-b1 text-gray-2">이름</label>
-					<p className="text-b1-bold text-gray-black">임승리</p>
+					<p className="text-b1-bold text-gray-black">{data?.name}</p>
 					<Link href={'/my/edit/name'}>
 						<Icon name="arrow" className="text-gray-3 size-24 rotate-180" />
 					</Link>
@@ -26,14 +32,14 @@ const ProfileEditBox = () => {
 				</div>
 				<div className="grid grid-cols-[8rem_1fr_2.4rem] gap-20 py-16">
 					<label className="text-b1 text-gray-2">결혼경험</label>
-					<p className="text-b1-bold text-gray-black">초혼</p>
+					<p className="text-b1-bold text-gray-black">{MARRIAGE_HISTORY[data?.marriageHistory ?? 'N']}</p>
 					<Link href={'/my/edit/marriage'}>
 						<Icon name="arrow" className="text-gray-3 size-24 rotate-180" />
 					</Link>
 				</div>
 				<div className="grid grid-cols-[8rem_1fr_2.4rem] gap-20 py-16">
 					<label className="text-b1 text-gray-2">신장</label>
-					<p className="text-b1-bold text-gray-black">170cm</p>
+					<p className="text-b1-bold text-gray-black">{data?.height}cm</p>
 					<Link href={'/my/edit/height'}>
 						<Icon name="arrow" className="text-gray-3 size-24 rotate-180" />
 					</Link>

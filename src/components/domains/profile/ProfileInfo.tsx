@@ -2,9 +2,11 @@
 
 import { useRef, useState } from 'react';
 
+import { MarriageHistory } from '@/apis/profile/type';
 import MockProfileImg from '@/assets/mock_profile.png';
 import Icon from '@/components/common/Icon';
 import TextArea from '@/components/common/TextArea/TextArea';
+import { MARRIAGE_HISTORY } from '@/enums/profile';
 import { cn } from '@/lib/utils';
 
 const images = [
@@ -13,7 +15,12 @@ const images = [
 	{ id: 3, src: MockProfileImg.src, alt: '프로필_3' },
 ];
 
-const ProfileInfo = () => {
+interface ProfileInfoProps {
+	name?: string;
+	marriageHistory?: MarriageHistory;
+}
+
+const ProfileInfo = ({ name, marriageHistory }: ProfileInfoProps) => {
 	const [activeIndex, setActiveIndex] = useState(0);
 	const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -57,11 +64,11 @@ const ProfileInfo = () => {
 			{/* 프로필 소개 */}
 			<div className="flex flex-col gap-16 p-16">
 				<div className="space-y-4">
-					<h2 className="text-h1 text-gray-black">임승리 36</h2>
+					<h2 className="text-h1 text-gray-black">{name} 36</h2>
 					<ul className="text-b2 text-gray-2 flex items-center gap-4">
 						<li>서울</li>
 						<li className="bg-gray-3 size-3 rounded-full"></li>
-						<li>초혼</li>
+						<li>{MARRIAGE_HISTORY[marriageHistory ?? 'N']}</li>
 						<li className="bg-gray-3 size-3 rounded-full"></li>
 						<li>창신교회</li>
 						<li className="bg-gray-3 size-3 rounded-full"></li>

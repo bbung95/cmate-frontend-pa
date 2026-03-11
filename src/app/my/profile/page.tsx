@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 
+import { useGetProfile } from '@/apis/profile/query';
 import Button from '@/components/common/Button/Button';
 import Icon from '@/components/common/Icon';
 import TopNavigation from '@/components/common/TopNavigation/TopNavigation';
@@ -13,12 +14,14 @@ import ProfileMenuBox from '@/components/domains/profile/ProfileMenuBox';
 import TypeBox from '@/components/domains/profile/TypeBox';
 
 export default function Profile() {
+	const { data: profileData } = useGetProfile();
+
 	return (
 		<>
 			<TopNavigation leftRender={<TopNavigation.BackButton />} title="나의 프로필 보기" />
 			<div className="flex flex-col gap-16">
-				<ProfileInfo />
-				<ProfileMenuBox />
+				<ProfileInfo name={profileData?.data.name} marriageHistory={profileData?.data.marriageHistory} />
+				<ProfileMenuBox data={profileData?.data} />
 				{/* 매력 어필 */}
 				<PointBox />
 				{/* 나의 이상형 */}

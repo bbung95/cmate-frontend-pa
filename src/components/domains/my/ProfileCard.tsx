@@ -5,6 +5,7 @@ import EmptyImg from '@/assets/empty_img.png';
 import Button from '@/components/common/Button/Button';
 import Icon from '@/components/common/Icon';
 import ProgressLine from '@/components/common/ProgressLine/ProgressLine';
+import { MARRIAGE_HISTORY } from '@/enums/profile';
 
 const ProfileCard = () => {
 	const { data: profileData } = useGetProfile();
@@ -23,7 +24,7 @@ const ProfileCard = () => {
 					<ul className="text-b2 text-gray-2 flex items-center gap-4">
 						<li>서울</li>
 						<li className="bg-gray-3 size-3 rounded-full"></li>
-						<li>초혼</li>
+						<li>{MARRIAGE_HISTORY[profileData?.data.marriageHistory ?? 'N']}</li>
 						<li className="bg-gray-3 size-3 rounded-full"></li>
 						<li>창신교회</li>
 						<li className="bg-gray-3 size-3 rounded-full"></li>
