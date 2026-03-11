@@ -1,3 +1,5 @@
+import { redirect, useParams } from 'next/navigation';
+
 export default function Home() {
-	return <div className="flex min-h-screen items-center justify-center font-sans dark:bg-black">HOME</div>;
+	return redirect('/my');
 }
