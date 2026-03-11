@@ -32,7 +32,7 @@ export const WithErrorMessage: Story = {
 		<div style={{ width: '40rem' }}>
 			<Field>
 				<Field.Label>이름</Field.Label>
-				<TextField placeholder="이름을 입력해주세요." error="이름을 입력해주세요." />
+				<TextField placeholder="이름을 입력해주세요." error />
 				<Field.ErrorMessage>이름은 필수 입력 항목입니다.</Field.ErrorMessage>
 			</Field>
 		</div>

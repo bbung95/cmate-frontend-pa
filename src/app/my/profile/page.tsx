@@ -5,13 +5,12 @@ import Link from 'next/link';
 import Button from '@/components/common/Button/Button';
 import Icon from '@/components/common/Icon';
 import TopNavigation from '@/components/common/TopNavigation/TopNavigation';
-
-import LifeStyleBox from './components/LifeStyleBox';
-import PhotoBox from './components/PhotoBox';
-import PointBox from './components/PointBox';
-import ProfileInfo from './components/ProfileInfo';
-import ProfileMenuBox from './components/ProfileMenuBox';
-import TypeBox from './components/TypeBox';
+import LifeStyleBox from '@/components/domains/profile/LifeStyleBox';
+import PhotoBox from '@/components/domains/profile/PhotoBox';
+import PointBox from '@/components/domains/profile/PointBox';
+import ProfileInfo from '@/components/domains/profile/ProfileInfo';
+import ProfileMenuBox from '@/components/domains/profile/ProfileMenuBox';
+import TypeBox from '@/components/domains/profile/TypeBox';
 
 export default function Profile() {
 	return (

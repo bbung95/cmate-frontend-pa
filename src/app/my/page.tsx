@@ -1,10 +1,8 @@
 'use client';
 
-import TabBar, { TabBarItem } from '@/components/common/TabBar/TabBar';
 import TopNavigation from '@/components/common/TopNavigation/TopNavigation';
-
-import MenuBox from './components/MenuBox';
-import ProfileCard from './components/ProfileCard';
+import MenuBox from '@/components/domains/my/MenuBox';
+import ProfileCard from '@/components/domains/my/ProfileCard';
 
 export default function My() {
 	return (

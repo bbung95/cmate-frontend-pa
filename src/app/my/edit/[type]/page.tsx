@@ -3,7 +3,6 @@
 import Button from '@/components/common/Button/Button';
 import Field from '@/components/common/Field/Field';
 import RadioButton from '@/components/common/RadioButton/RadioButton';
-import { RadioGroup } from '@/components/common/RadioButton/RadioButton.stories';
 import TextField from '@/components/common/TextField/TextField';
 import TopNavigation from '@/components/common/TopNavigation/TopNavigation';
 

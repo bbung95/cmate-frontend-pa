@@ -1,16 +1,15 @@
 'use client';
 
+import PhotoEditBox from '@//components/domains/profile/edit/PhotoEditBox';
 import Button from '@/components/common/Button/Button';
 import Icon from '@/components/common/Icon';
 import TopNavigation from '@/components/common/TopNavigation/TopNavigation';
-
-import IntroductionEditBox from './components/IntroductionEditBox';
-import LifeStyleEditBox from './components/LifeStyleEditBox';
-import PhotoEditBox from './components/PhotoEditBox';
-import PointEditBox from './components/PointEditBox';
-import ProfileEditBox from './components/ProfileEditBox';
-import ProfilePhotoEdit from './components/ProfilePhotoEdit';
-import TypeEditBox from './components/TypeEditBox';
+import IntroductionEditBox from '@/components/domains/profile/edit/IntroductionEditBox';
+import LifeStyleEditBox from '@/components/domains/profile/edit/LifeStyleEditBox';
+import PointEditBox from '@/components/domains/profile/edit/PointEditBox';
+import ProfileEditBox from '@/components/domains/profile/edit/ProfileEditBox';
+import ProfilePhotoEdit from '@/components/domains/profile/edit/ProfilePhotoEdit';
+import TypeEditBox from '@/components/domains/profile/edit/TypeEditBox';
 
 export default function EditProfilePage() {
 	return (
