@@ -1,5 +1,6 @@
 'use client';
 
+import { useGetPhotos } from '@/apis/photos/query';
 import { useGetProfile } from '@/apis/profile/query';
 import EmptyImg from '@/assets/empty_img.png';
 import Button from '@/components/common/Button/Button';

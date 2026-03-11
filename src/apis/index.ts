@@ -40,6 +40,6 @@ export const api = {
 	post: <T>(url: string, data?: any, config?: any) => axiosInstance.post<AxiosResponseType<T>>(url, data, config),
 	put: <T>(url: string, data?: any, config?: any) => axiosInstance.put<AxiosResponseType<T>>(url, data, config),
 	patch: <T>(url: string, data?: any, config?: any) => axiosInstance.patch<AxiosResponseType<T>>(url, data, config),
-	delete: <T>(url: string, params?: any, config?: any) =>
-		axiosInstance.delete<AxiosResponseType<T>>(url, { params, ...config }),
+	delete: <T>(url: string, data?: any, config?: any) =>
+		axiosInstance.delete<AxiosResponseType<T>>(url, { data, ...config }),
 };

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 
+import { useGetPhotos } from '@/apis/photos/query';
 import { useGetProfile } from '@/apis/profile/query';
 import Button from '@/components/common/Button/Button';
 import Icon from '@/components/common/Icon';
@@ -15,12 +16,17 @@ import TypeBox from '@/components/domains/profile/TypeBox';
 
 export default function Profile() {
 	const { data: profileData } = useGetProfile();
+	const { data: photosData } = useGetPhotos();
 
 	return (
 		<>
 			<TopNavigation leftRender={<TopNavigation.BackButton />} title="나의 프로필 보기" />
 			<div className="flex flex-col gap-16">
-				<ProfileInfo name={profileData?.data.name} marriageHistory={profileData?.data.marriageHistory} />
+				<ProfileInfo
+					name={profileData?.data.name}
+					marriageHistory={profileData?.data.marriageHistory}
+					images={photosData?.data}
+				/>
 				<ProfileMenuBox data={profileData?.data} />
 				{/* 매력 어필 */}
 				<PointBox />

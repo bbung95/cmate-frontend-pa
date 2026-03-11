@@ -2,13 +2,14 @@
 
 import { useEffect } from 'react';
 
-import PhotoEditBox from '@//components/domains/profile/edit/PhotoEditBox';
+import { useGetPhotos } from '@/apis/photos/query';
 import { useChangeProfile, useGetProfile } from '@/apis/profile/query';
 import Button from '@/components/common/Button/Button';
 import Icon from '@/components/common/Icon';
 import TopNavigation from '@/components/common/TopNavigation/TopNavigation';
 import IntroductionEditBox from '@/components/domains/profile/edit/IntroductionEditBox';
 import LifeStyleEditBox from '@/components/domains/profile/edit/LifeStyleEditBox';
+import PhotoEditBox from '@/components/domains/profile/edit/PhotoEditBox';
 import PointEditBox from '@/components/domains/profile/edit/PointEditBox';
 import ProfileEditBox from '@/components/domains/profile/edit/ProfileEditBox';
 import ProfilePhotoEdit from '@/components/domains/profile/edit/ProfilePhotoEdit';
@@ -18,6 +19,7 @@ import useProfileStore from '@/stores/useProfile';
 export default function EditProfilePage() {
 	const { data: profileData } = useGetProfile();
 	const { mutateAsync: changeProfile } = useChangeProfile();
+	const { data: photosData } = useGetPhotos();
 
 	const profileStore = useProfileStore();
 
@@ -45,7 +47,9 @@ export default function EditProfilePage() {
 		<>
 			<TopNavigation leftRender={<TopNavigation.BackButton />} title="프로필 수정하기" />
 			<div className="flex flex-col gap-16 pt-16">
-				<ProfilePhotoEdit />
+				{/* 추상화된 사진 수정 컴포넌트 */}
+				<ProfilePhotoEdit images={photosData?.data ?? []} />
+
 				<ProfileEditBox data={profileData?.data} />
 				{/* 포토북 */}
 				<PhotoEditBox />

@@ -1,6 +1,6 @@
-# frontend PA
+# C-MATE frontend PA
 
-Frontend PA 를 구현하였습니다.
+C-MATE Frontend PA 를 구현하였습니다.
 
 ## 프로젝트 실행
 
@@ -8,20 +8,20 @@ Frontend PA 를 구현하였습니다.
 
 ```bash
 # clone
-git clone https://github.com/bbung95/frontend-pa.git
+git clone https://github.com/bbung95/cmate-frontend-pa.git
 
 # change directory
-cd frontend-pa
+cd cmate-frontend-pa
 
 # install
-npm install
-# or pnpm install
+pnpm install
 
 # start
-npm run dev
-# or pnpm dev
+pnpm dev
 ```
 
 ## Figma MCP
 
-figma custom mcp를 사용하여 디자인 토큰과 디자인컴포넌트를 구현했습니다.
+figma custom mcp를 사용하여 디자인 토큰을 구현하였습니다.
+
+## 

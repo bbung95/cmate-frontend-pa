@@ -3,26 +3,23 @@
 import { useRef, useState } from 'react';
 
 import { MarriageHistory } from '@/apis/profile/type';
-import MockProfileImg from '@/assets/mock_profile.png';
+import EmptyImg from '@/assets/empty_img.png';
 import Icon from '@/components/common/Icon';
 import TextArea from '@/components/common/TextArea/TextArea';
 import { MARRIAGE_HISTORY } from '@/enums/profile';
 import { cn } from '@/lib/utils';
 
-const images = [
-	{ id: 1, src: MockProfileImg.src, alt: '프로필_1' },
-	{ id: 2, src: MockProfileImg.src, alt: '프로필_2' },
-	{ id: 3, src: MockProfileImg.src, alt: '프로필_3' },
-];
-
 interface ProfileInfoProps {
 	name?: string;
 	marriageHistory?: MarriageHistory;
+	images?: any[];
 }
 
-const ProfileInfo = ({ name, marriageHistory }: ProfileInfoProps) => {
+const ProfileInfo = ({ name, marriageHistory, images = [] }: ProfileInfoProps) => {
 	const [activeIndex, setActiveIndex] = useState(0);
 	const scrollRef = useRef<HTMLDivElement>(null);
+
+	const photos = images?.length > 0 ? images : [{ src: '' }];
 
 	const handleScroll = () => {
 		if (!scrollRef.current) return;
@@ -37,12 +34,12 @@ const ProfileInfo = ({ name, marriageHistory }: ProfileInfoProps) => {
 			<div className="relative w-full overflow-hidden">
 				<div className="absolute top-16 left-0 z-10 flex w-full flex-col items-center">
 					<div className="flex gap-8">
-						{images.map((_, index) => (
+						{photos.map((_, idx) => (
 							<div
-								key={index}
+								key={idx}
 								className={cn(
 									'size-4 rounded-full transition-all duration-300',
-									index === activeIndex ? 'bg-gray-6' : 'bg-[#767785]/70'
+									idx === activeIndex ? 'bg-gray-6' : 'bg-[#767785]/70'
 								)}
 							/>
 						))}
@@ -54,9 +51,9 @@ const ProfileInfo = ({ name, marriageHistory }: ProfileInfoProps) => {
 					className="scrollbar-hide flex snap-x snap-mandatory overflow-x-auto"
 					style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
 				>
-					{images.map((image) => (
-						<div key={image.id} className="w-full shrink-0 snap-start">
-							<img src={image.src} alt={image.alt} className="aspect-375/343 w-full object-cover" />
+					{photos.map((image, idx) => (
+						<div key={idx} className="w-full shrink-0 snap-start">
+							<img src={image.src || EmptyImg.src} alt={image.alt} className="aspect-375/343 w-full object-cover" />
 						</div>
 					))}
 				</div>
