@@ -17,7 +17,11 @@ const ProfileCard = () => {
 				<div className="relative size-100">
 					<ProgressLine percentage={80} size={95} />
 					<div className="absolute top-1/2 left-1/2 size-85 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full">
-						<img src={profileData?.data.profileImageUrl || EmptyImg.src} className="size-full" alt="프로필 사진" />
+						<img
+							src={profileData?.data.profileImageUrl || EmptyImg.src}
+							className="h-full w-full object-cover"
+							alt="프로필 사진"
+						/>
 					</div>
 				</div>
 				<div className="space-y-4">

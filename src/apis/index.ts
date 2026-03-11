@@ -23,7 +23,6 @@ axiosInstance.interceptors.response.use(
 	},
 	async (error: AxiosError) => {
 		const response = error.response as AxiosResponse<AxiosResponseType>;
-		const status = response?.status;
 		const message = response?.data?.message || '알 수 없는 오류가 발생했습니다.';
 
 		if (message) {
