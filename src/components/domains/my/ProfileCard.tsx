@@ -1,22 +1,25 @@
 'use client';
 
-import MockProfileImg from '@/assets/mock_profile.png';
+import { useGetProfile } from '@/apis/profile/query';
+import EmptyImg from '@/assets/empty_img.png';
 import Button from '@/components/common/Button/Button';
 import Icon from '@/components/common/Icon';
 import ProgressLine from '@/components/common/ProgressLine/ProgressLine';
 
 const ProfileCard = () => {
+	const { data: profileData } = useGetProfile();
+
 	return (
 		<div className="space-y-16 rounded-lg bg-white px-12 py-16 shadow-sm">
 			<div className="flex items-center gap-12">
 				<div className="relative size-100">
 					<ProgressLine percentage={80} size={95} />
 					<div className="absolute top-1/2 left-1/2 size-85 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full">
-						<img src={MockProfileImg.src} className="size-full" alt="프로필 사진" />
+						<img src={profileData?.data.profileImageUrl || EmptyImg.src} className="size-full" alt="프로필 사진" />
 					</div>
 				</div>
 				<div className="space-y-4">
-					<h2 className="text-b1-bold text-gray-black">임승리 36</h2>
+					<h2 className="text-b1-bold text-gray-black">{profileData?.data.name} 36</h2>
 					<ul className="text-b2 text-gray-2 flex items-center gap-4">
 						<li>서울</li>
 						<li className="bg-gray-3 size-3 rounded-full"></li>

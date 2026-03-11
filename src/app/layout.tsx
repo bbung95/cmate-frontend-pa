@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import ClientProvider from '@/components/globals/ClientProvider';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
@@ -14,8 +15,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`antialiased`}>
-				<main>{children}</main>
+			<body className={`antialiased`} suppressHydrationWarning>
+				<main>
+					<ClientProvider>{children}</ClientProvider>
+				</main>
 			</body>
 		</html>
 	);
