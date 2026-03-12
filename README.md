@@ -184,5 +184,8 @@ async rewrites() {
 		];
 	},
 ```
+## 미 구현사항
 
+### POST : Photo API
 
+- API 연동시 sortNums에 값 매칭에 대해서 파악이 어려워 정렬 부분을 제외하고 진행하였습니다.
